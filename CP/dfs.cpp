@@ -337,7 +337,7 @@ void dfs(vector<vli> &graph,vli &visited,lli node){
 	visited[node]=1;
 
 	for(auto child : graph[node]){
-		if(graph[child]!=1){
+		if(child!=1){
 			dfs(graph,visited,node);
 		}
 	}
