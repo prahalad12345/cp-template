@@ -1,0 +1,104 @@
+abound inserted
+abounds inserted
+abundance inserted
+abundant inserted
+accessable inserted
+bloom inserted
+blossom inserted
+bolster inserted
+bonny inserted
+bonus inserted
+bonuses is Probably already present
+coherent inserted
+cohesive inserted
+colorful inserted
+comely inserted
+comfort inserted
+gems inserted
+generosity inserted
+generous inserted
+generously inserted
+genial inserted
+bluff is Probably already present
+cheater is Probably already present
+hate inserted
+war is Probably already present
+humanity inserted
+racism inserted
+hurt inserted
+nuke is Probably already present
+gloomy is Probably already present
+facebook inserted
+geeksforgeeks inserted
+twitter inserted
+MacBook-Pro:tree prahaladvijaykumar$ g++ bloomfilter.cpp
+MacBook-Pro:tree prahaladvijaykumar$ ./a.out input.txt
+abound inserted
+abounds inserted
+abundance inserted
+abundant inserted
+accessable inserted
+bloom inserted
+blossom inserted
+bolster inserted
+bonny inserted
+bonus inserted
+bonuses is Probably already present
+coherent inserted
+cohesive inserted
+colorful inserted
+comely inserted
+comfort inserted
+gems inserted
+generosity inserted
+generous inserted
+generously inserted
+genial inserted
+bluff is Probably already present
+cheater is Probably already present
+hate inserted
+war is Probably already present
+humanity inserted
+racism inserted
+hurt inserted
+nuke is Probably already present
+gloomy is Probably already present
+facebook inserted
+geeksforgeeks inserted
+twitter inserted
+MacBook-Pro:tree prahaladvijaykumar$ ./a.out <input.txt>
+bash: syntax error near unexpected token `newline'
+MacBook-Pro:tree prahaladvijaykumar$ ./a.out <> input.txt
+abound inserted
+abounds inserted
+abundance inserted
+abundant inserted
+accessable inserted
+bloom inserted
+blossom inserted
+bolster inserted
+bonny inserted
+bonus inserted
+bonuses is Probably already present
+coherent inserted
+cohesive inserted
+colorful inserted
+comely inserted
+comfort inserted
+gems inserted
+generosity inserted
+generous inserted
+generously inserted
+genial inserted
+bluff is Probably already present
+cheater is Probably already present
+hate inserted
+war is Probably already present
+humanity inserted
+racism inserted
+hurt inserted
+nuke is Probably already present
+gloomy is Probably already present
+facebook inserted
+geeksforgeeks inserted
+twitter inserted

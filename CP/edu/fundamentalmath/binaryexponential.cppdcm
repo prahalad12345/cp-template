@@ -1,0 +1,51 @@
+#include <iostream>
+#include<cmath>
+#include<vector>
+#include<string>
+#include<algorithm>
+#include<set>
+#include<stack>
+#include <map>
+#include<climits>
+//read question properly
+#define ld long double
+#define ll long long 
+#define lli long long int 
+
+using namespace std;
+
+long long mul_mod(long long a, long long b, long long m)
+{
+  long double x;
+  long long c;
+  long long r;
+  if (a >= m) a %= m;
+  if (b >= m) b %= m;
+  x = a;
+  c = x * b / m;
+  r = (long long)(a * b - c * m) % (long long)m;
+  return r < 0 ? r + m : r;
+}
+
+long long binmod(long long a, long long b, long long m) {
+    a %= m;
+    long long res = 1;
+    while (b  > 0) {
+        if (b & 1)
+            res = res * a % m;
+        a = a * a % m;
+        b >>= 1;
+    }
+    return res;
+}
+
+long long binpow(long long a, long long b) {
+    long long res = 1;
+    while (b > 0) {
+        if (b & 1)
+            res = res * a ;
+        a = a * a ;
+        b >>= 1;
+    }
+    return res;
+}

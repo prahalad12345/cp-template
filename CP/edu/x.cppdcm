@@ -1,0 +1,14 @@
+#include<iostream>
+#include<algorithm>
+using namespace std;
+
+bool compare(int x,int y){
+    return (x>y);
+}
+
+int main(){
+    int arr[]={1,4,3,2,6,5,7,8};
+    sort(arr,arr+8,compare);
+    for(int i=0;i<8;i++)
+        cout<<arr[i]<<endl;
+}
