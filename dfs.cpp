@@ -317,35 +317,75 @@
     return (a.second < b.second);
 }
 
-lli binarysearch(vli arr, int l, int r, int x)
-{
-     while (l <= r) {
-        lli m = l + (r - l) / 2;
+void dfsbridge(vector<vli> &graph,vector<bool> &visited,lli node,lli par,vli &in,vli &low,lli timer,vector< pair<lli,lli> > &bridges){
 
-        if (arr[m] == x)
-            return m;
-        if (arr[m] < x)
-            l = m + 1;
-        else
-            r = m - 1;
-    }
-    return -1;
-}
-
-
-void dfs(vector<vli> &graph,vector<bool> &visited,lli node){
-	visited[node]=1;
-
+    visited[node]=1;
+    in[node]=timer;
+    low[node]=timer;
+    timer++;
 	for(auto child : graph[node]){
-		if(!visited[child]){
-			dfs(graph,visited,node);
-		}
+        if(child==par)
+            continue;
+        if(visited[child]){
+            low[node]=min(low[node],in[child]); 
+        }
+        else{
+            dfsbridge(graph,visited,child,node,in,low,timer,bridges);
+            if(low[child]>in[node]){
+                 bridges.pb(make_pair(node,child));
+            }
+            low[node]=min(low[node],low[child]); 
+        }
 	}
 }
+
+
+void dfs(vector<vli> &graph,vector<bool> &visited,lli node,set< pair<lli,lli> > &elements){
+	visited[node]=1;
+   // cout<<distance[node]<<" "<<node<<endl;
+	for(auto child : graph[node]){
+		if(!visited[child]){
+            if(elements.find(make_pair(child,node))==elements.end() && elements.find(make_pair(node,child))==elements.end())
+                elements.insert(make_pair(node,child));
+            dfs(graph,visited,child,elements);
+        }
+        if(elements.find(make_pair(child,node))==elements.end() && elements.find(make_pair(node,child))==elements.end())
+                elements.insert(make_pair(node,child));
+	}
+}
+
 
 int main()
 {
     fast_io;
-    
+    lli n,m;
+    cin>>n>>m;
+    vector<vli> graph(n+1);
+    vector<bool> visited(n+1,0);
+    for(lli i=1;i<=m;i++){
+        lli a,b;
+        cin>>a>>b;
+        graph[a].pb(b);
+        graph[b].pb(a);
+    }
+    lli timer=0;
+    vli in(n+1,0),low(n+1,0);
+    vector< pair<lli,lli> > bridges;
+    dfsbridge(graph,visited,1,-1,in,low,timer,bridges);
+    for(lli i=0;i<n;i++){
+        visited[i+1]=0;
+    }
+    if(bridges.size()==0){
+        set< pair<lli,lli> > elements;
+        dfs(graph,visited,1,elements);
+        //cout<<elements.size()<<endl;
+        for(auto x:elements){
+            cout<<x.first<<" "<<x.second<<endl;
+        }
+    }
+    else{
+        cout<<0<<endl;
+    }
     return 0;
 }   
+
